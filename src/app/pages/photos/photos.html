@@ -2,12 +2,11 @@
     <h2 class="title" style="text-align: center; margin-bottom: 50px;">Photo Gallery</h2>
 
     <div class="gallery-grid">
-        <!-- Placeholders -->
-        <div class="photo-item" *ngFor="let item of [1,2,3,4,5,6]">
-            <div class="photo-placeholder">
-                <span>Photo {{ item }}</span>
+        <div class="photo-item" *ngFor="let photo of photos">
+            <div class="photo-wrapper">
+                <img [src]="photo.src" [alt]="photo.caption" loading="lazy">
             </div>
-            <div class="caption">Gallery Image {{ item }}</div>
+            <!-- <div class="caption">{{ photo.caption }}</div> -->
         </div>
     </div>
 </div>
