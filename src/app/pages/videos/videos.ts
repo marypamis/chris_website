@@ -13,11 +13,6 @@ export class VideosComponent {
       src: '/assets/rohi.mp4',
       title: 'Chris in Action',
       description: 'A video showcasing my skills and projects.'
-    },
-    {
-      src: '/assets/demo.mp4',
-      title: 'Math / Coding Demo',
-      description: 'Demonstrating problem-solving techniques.'
     }
   ];
 }
