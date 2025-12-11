@@ -1,0 +1,55 @@
+<div class="container section">
+    <h2 class="title" style="text-align: center;">Request Math Tutoring</h2>
+    <p class="intro-text" style="text-align: center; max-width: 600px; margin: 0 auto 3rem;">
+        Need help with math? I’m happy to help! Whether it’s homework, tests, or learning new concepts, I offer
+        friendly, easy-to-understand tutoring.
+    </p>
+
+    <div class="form-card">
+        <form name="tutoring" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="tutoring" />
+            <p class="hidden" style="display: none;">
+                <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+            </p>
+
+            <div class="form-group">
+                <label for="name">Student Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your Name" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="your.email@example.com"
+                    class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="grade">Grade Level</label>
+                <input type="text" id="grade" name="grade" placeholder="e.g. 9th Grade" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="topic">Math Topic</label>
+                <select id="topic" name="topic" class="form-control" required>
+                    <option value="" disabled selected>Select a topic</option>
+                    <option value="Pre-Algebra">Pre-Algebra</option>
+                    <option value="Algebra 1">Algebra 1</option>
+                    <option value="Geometry">Geometry</option>
+                    <option value="Algebra 2">Algebra 2</option>
+                    <option value="Pre-Calculus">Pre-Calculus</option>
+                    <option value="AP Calculus AB">AP Calculus AB</option>
+                    <option value="AP Statistics">AP Statistics</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message / Details</label>
+                <textarea id="message" name="message" rows="5" placeholder="What specifically do you need help with?"
+                    class="form-control" required></textarea>
+            </div>
+
+            <button type="submit" class="btn full-width">Send Request</button>
+        </form>
+    </div>
+</div>

@@ -1,4 +1,86 @@
 /* Global Styles */
-@import 'styles/variables';
-@import 'styles/mixins';
-@import 'styles/global';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-color: #3A7AFE;
+  --secondary-color: #1F2A48;
+  --accent-color: #A6C9FF;
+  --bg-color: #f4f7fa;
+  --text-color: #1F2A48;
+  --white: #ffffff;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  --transition-speed: 0.3s;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 50px; /* Modern rounded */
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-weight: 600;
+  transition: all var(--transition-speed);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(58, 122, 254, 0.3);
+
+  &:hover {
+    background-color: darken(#3A7AFE, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(58, 122, 254, 0.4);
+  }
+
+  &.secondary {
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 6px rgba(31, 42, 72, 0.3);
+  }
+}
+
+.card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.03);
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    }
+}

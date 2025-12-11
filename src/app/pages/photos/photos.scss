@@ -1,0 +1,36 @@
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.photo-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+.photo-placeholder {
+    width: 100%;
+    height: 250px;
+    /* Aspect ratio */
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+    font-weight: 600;
+}
+
+.caption {
+    padding: 15px;
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
