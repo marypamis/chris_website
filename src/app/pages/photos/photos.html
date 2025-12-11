@@ -4,7 +4,7 @@
     <div class="gallery-grid">
         <div class="photo-item" *ngFor="let photo of photos">
             <div class="photo-wrapper">
-                <img [src]="photo.src" [alt]="photo.caption" loading="lazy">
+                <img [src]="photo.src" [alt]="photo.caption" [style.object-position]="photo.position" loading="lazy">
             </div>
             <!-- <div class="caption">{{ photo.caption }}</div> -->
         </div>
