@@ -1,0 +1,21 @@
+<section class="section blog-section">
+    <div class="container">
+        <h2 class="section-title">Latest Articles</h2>
+
+        <div class="blog-grid" *ngIf="posts$ | async as posts">
+            <article class="blog-card" *ngFor="let post of posts">
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="date">{{ post.date }}</span>
+                        <div class="tags">
+                            <span *ngFor="let tag of post.tags">#{{ tag }}</span>
+                        </div>
+                    </div>
+                    <h3><a [routerLink]="['/blog', post.id]">{{ post.title }}</a></h3>
+                    <p>{{ post.excerpt }}</p>
+                    <a [routerLink]="['/blog', post.id]" class="read-more">Read Article &rarr;</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,22 @@
+<article class="section post-section" *ngIf="post$ | async as post; else notFound">
+    <div class="container post-container">
+        <a routerLink="/blog" class="back-link">&larr; Back to Articles</a>
+
+        <header class="post-header">
+            <div class="meta">
+                <span class="date">{{ post.date }}</span>
+                <span class="tags" *ngFor="let tag of post.tags">#{{ tag }}</span>
+            </div>
+            <h1>{{ post.title }}</h1>
+        </header>
+
+        <div class="post-content" [innerHTML]="post.content"></div>
+    </div>
+</article>
+
+<ng-template #notFound>
+    <div class="container not-found">
+        <h2>Post not found</h2>
+        <a routerLink="/blog" class="btn btn-primary">Go Home</a>
+    </div>
+</ng-template>

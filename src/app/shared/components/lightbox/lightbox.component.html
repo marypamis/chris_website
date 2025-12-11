@@ -1,0 +1,12 @@
+<div class="lightbox-overlay" *ngIf="isOpen" (click)="close.emit()">
+    <div class="lightbox-content" (click)="$event.stopPropagation()">
+        <button class="close-btn" (click)="close.emit()">&times;</button>
+
+        <button class="nav-btn prev" (click)="prev.emit()" *ngIf="hasPrev">&lt;</button>
+
+        <img [src]="currentImage?.url" [alt]="currentImage?.caption" class="lightbox-img">
+        <div class="caption" *ngIf="currentImage?.caption">{{ currentImage?.caption }}</div>
+
+        <button class="nav-btn next" (click)="next.emit()" *ngIf="hasNext">&gt;</button>
+    </div>
+</div>

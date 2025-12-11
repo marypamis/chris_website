@@ -1,0 +1,131 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.bio-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    align-items: center;
+
+    @include desktop {
+        grid-template-columns: 1fr 1fr;
+        gap: $spacing-xl;
+    }
+}
+
+.bio-image {
+    display: flex;
+    justify-content: center;
+
+    .image-placeholder {
+        width: 300px;
+        height: 300px;
+        background-color: $bg-tertiary;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $text-muted;
+        border: 2px dashed $text-muted;
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05));
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.bio-content {
+    h2 {
+        font-size: 2.5rem;
+        color: $accent-primary;
+        margin-bottom: $spacing-xs;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        color: $text-secondary;
+        margin-bottom: $spacing-md;
+        font-weight: 500;
+    }
+
+    .bio-text {
+        color: $text-muted;
+        margin-bottom: $spacing-md;
+
+        p {
+            margin-bottom: $spacing-sm;
+        }
+    }
+}
+
+.skills-container {
+    h3 {
+        font-size: 1.2rem;
+        margin-bottom: $spacing-sm;
+        color: $text-primary;
+    }
+
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing-xs;
+    }
+
+    .skill-chip {
+        background-color: rgba($accent-primary, 0.1);
+        color: $accent-primary;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border: 1px solid rgba($accent-primary, 0.2);
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: $accent-primary;
+            color: $bg-primary;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+// Animations
+.fade-in-left {
+    animation: fadeInLeft 1s forwards;
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.fade-in-right {
+    animation: fadeInRight 1s forwards;
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+@keyframes fadeInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
